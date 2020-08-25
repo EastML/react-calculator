@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#output {
+    background-color: #DDD;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    height: 1.25em;
+    width: 240px;
+    text-align: right;
+}
+
+#input {
+    background-color: #DDD;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px; 
+    width: 260px;
+}
+
+button {
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 2em;
+    outline: none;
+}
+
+#operators {
+    display: flex; 
+    flex-direction: column;
+}
+
+#operators button {
+    background-color: rgb(53, 121, 223);
+    color: white;
+}
+
+#equals {
+    background-color: rgb(90, 209, 96);
+    color: white;
+    width: 260px;
+}
