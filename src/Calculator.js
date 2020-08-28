@@ -8,7 +8,8 @@ class Calculator extends React.Component {
         this.state = {
             value1: '',
             value2: 0,
-            operator: ''
+            operator: '',
+            newNum: false
         }
 
         this.handleOperatorClick = this.handleOperatorClick.bind(this);
@@ -23,10 +24,18 @@ class Calculator extends React.Component {
             if (e === "0" && !this.state.value1) {
                 return null;
             }
-
-            this.setState({
-                value1: this.state.value1 + e
-            });
+            
+            if (this.state.newNum) {
+                this.setState({
+                    value1: e,
+                    newNum: false
+                });
+            } else {
+                this.setState({
+                    value1: this.state.value1 + e
+                })
+            }
+            
             
         }
     }
@@ -46,8 +55,8 @@ class Calculator extends React.Component {
 
         this.setState({
             value2: this.state.value1,
-            value1: '',
-            operator: e
+            operator: e,
+            newNum: true
         });
     }
 
@@ -107,9 +116,11 @@ class Calculator extends React.Component {
             }
         } else {
             this.setState({
-                value1: answer
+                value1: answer.toString()
             });
         }
+
+        console.log(this.state);
     }
 
     render() {
